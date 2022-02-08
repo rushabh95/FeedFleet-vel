@@ -19,7 +19,7 @@ const isUserAuthenticated = () => {
 }
 
 // Register Method
-const postRegister = ("https://ffbackend95.herokuapp.com", data) => {
+const postRegister = (url, data) => {
     return axios.post("https://ffbackend95.herokuapp.com" , data).then(response => {
         if (response.status >= 200 || response.status <= 299)
             return response.data;
