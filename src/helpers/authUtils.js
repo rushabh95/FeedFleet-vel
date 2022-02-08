@@ -19,8 +19,8 @@ const isUserAuthenticated = () => {
 }
 
 // Register Method
-const postRegister = (url, data) => {
-    return axios.post("https://hopeful-tereshkova-c64e69.netlify.app" , data).then(response => {
+const postRegister = ("https://ffbackend95.herokuapp.com", data) => {
+    return axios.post("https://ffbackend95.herokuapp.com" , data).then(response => {
         if (response.status >= 200 || response.status <= 299)
             return response.data;
             throw response.data;
