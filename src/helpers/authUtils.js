@@ -20,7 +20,7 @@ const isUserAuthenticated = () => {
 
 // Register Method
 const postRegister = (url, data) => {
-    return axios.post(""https://hopeful-tereshkova-c64e69.netlify.app"" , data).then(response => {
+    return axios.post("https://hopeful-tereshkova-c64e69.netlify.app" , data).then(response => {
         if (response.status >= 200 || response.status <= 299)
             return response.data;
             throw response.data;
