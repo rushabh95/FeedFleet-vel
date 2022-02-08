@@ -2,6 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
 
+
 const {MONGOURL} = require('./db')
 require('./models/user')
 const userroute=require('./routes/auth')

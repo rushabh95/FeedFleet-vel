@@ -6,20 +6,22 @@ import { registerUser, emptyError } from '../../store/actions';
 import logowhite from '../../images/logo-white.png';
 import { AvForm, AvField } from 'availity-reactstrap-validation';
 
+
 class Pagesregister extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            fullname:this.props.fullname,
-            email:this.props.email,
-            companyname:this.props.companyname,
-            password: this.props.password
+            fullname:"",
+            email:"",
+            companyname:"",
+            password: ""        
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        
     }
 
-    handleSubmit(event, values) {
+     handleSubmit(event, values) {
         this.props.postRegister(values)
     }
 
@@ -53,7 +55,7 @@ class Pagesregister extends Component {
                                 <AvField name="email" label="Email" value={this.state.email} placeholder="Enter Email" type="email" required />
                                 <AvField name="companyname" label="Company name" value={this.state.companyname} placeholder="Enter company name" type="text" required />
                                 <AvField name="password" label="Password" value={this.state.password} placeholder="Enter Password" type="password" required />
-                                <AvField name="confirmpassword" label="Confirm Password" value={this.state.confirmpassword} placeholder="Enter Password" type="password" required />
+                                <AvField name="confirmpassword" label="Confirm Password" value={this.state.password} placeholder="Enter Password" type="password" required />
                                
                                 <Row className="form-group m-t-20">
                                     <Col md="12" className="text-right">
