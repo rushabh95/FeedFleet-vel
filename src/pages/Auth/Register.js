@@ -7,6 +7,8 @@ import logowhite from '../../images/logo-white.png';
 import { AvForm, AvField } from 'availity-reactstrap-validation';
 
 
+
+
 class Pagesregister extends Component {
 
     constructor(props) {
@@ -22,7 +24,8 @@ class Pagesregister extends Component {
     }
 
      handleSubmit(event, values) {
-        this.props.postRegister(values)
+        this.props.registerUser(values)
+        
     }
 
 

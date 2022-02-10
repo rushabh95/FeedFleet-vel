@@ -22,6 +22,7 @@ const isUserAuthenticated = () => {
 const postRegister = (url, data) => {
     return axios.post("http://3.142.121.92:5000/api/v1/signup" , data).then(response => {
         if (response.status >= 200 || response.status <= 299)
+        console.log(response)
             return response.data;
             throw response.data;
     }).catch(err => {
@@ -44,6 +45,7 @@ const postLogin = (url, data) => {
     return axios.get("http://3.142.121.92:5000/api/v1/login", data).then(response => {
         
         if (response.status === 400 || response.status === 500)
+    
             throw response.data;
         return response.data;
     }).catch(err => {
