@@ -19,12 +19,12 @@ const isUserAuthenticated = () => {
 }
 
 // Register Method
-const postRegister = (url, data) => {
+const postRegister = (data) => {
+    console.log("postRegister ", data);
     return axios.post("http://3.142.121.92:5000/api/v1/signup" , data).then(response => {
-        if (response.status >= 200 || response.status <= 299)
-        console.log(response)
-            return response.data;
-            throw response.data;
+        //if (response.status >= 200 || response.status <= 299)
+        console.log('response',response)
+        return response.data;
     }).catch(err => {
         var message;
         if (err.response && err.response.status ) {
@@ -47,10 +47,11 @@ const postLogin = (url, data) => {
         if (response.status === 400 || response.status === 500)
     
             throw response.data;
-        return response.data;
+            return response.data;
     }).catch(err => {
         throw err[1];
     });
+    
 }
 
 // postForgetPwd 

@@ -10,7 +10,8 @@ import { postRegister } from '../../../helpers/authUtils';
 // Is user register successfull then direct plot user in redux.
 function* registerUser({ payload: { user } }) {
     try {
-        const response = yield call(postRegister, '/post-register', user);
+        console.log("USers", user);
+        const response = yield call(postRegister, user);
         yield put(registerUserSuccessful(response));
     } catch (error) {
         yield put(apiError(error));

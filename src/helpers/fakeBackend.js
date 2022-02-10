@@ -9,7 +9,7 @@ const fakeBackend = () => {
   // This sets the mock adapter on the default instance
   var mock = new MockAdapter(axios);
 
-  mock.onPost('/post-register').reply(function (config) {
+  mock.onPost('/http://3.142.121.92:5000/api/v1/signup').reply(function (config) {
 
     const user = JSON.parse(config['data']);
     users.push(user);
