@@ -2,6 +2,7 @@
   "name": "vertical",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:5000",
   "dependencies": {
     "@fullcalendar/bootstrap": "^4.3.0",
     "@fullcalendar/core": "^4.3.1",
@@ -17,6 +18,7 @@
     "bootstrap": "^4.3.1",
     "chart.js": "^2.8.0",
     "chartist": "^0.11.3",
+    "cors": "^2.8.5",
     "draft-js": "^0.11.0",
     "echarts": "^4.2.1",
     "echarts-for-react": "^2.0.15-beta.0",
