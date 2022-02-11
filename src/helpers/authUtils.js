@@ -22,7 +22,7 @@ const isUserAuthenticated = () => {
 // Register Method
 const postRegister = (data) => {
     console.log("postRegister ", data);
-    return axios.post(`${baseUrl}signup`, data).then(response => {
+    return axios.post('http://3.142.121.92:5000/api/v1/signup', data).then(response => {
         //if (response.status >= 200 || response.status <= 299)
         console.log('response',response)
         return response.data;
