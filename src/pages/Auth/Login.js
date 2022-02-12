@@ -1,25 +1,77 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { Alert, Button, Col, Row, Card } from 'reactstrap';
-import { Link, withRouter } from 'react-router-dom';
+import { Link, Redirect, useHistory, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { checkLogin } from '../../store/actions';
 import { AvForm, AvField } from 'availity-reactstrap-validation';
 import logowhite from '../../images/logo-white.png';
 
-class Pageslogin extends Component {
+const Pageslogin = () => {
+const history = useHistory()
 
-    constructor(props) {
-        super(props);
-        this.state = { username: "", password: "" }
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
+const [email,setemail] = useState('')
+const [password,setpassword] = useState('')
+
+const loginuser =async (e) =>{
+    // const fetchData = () => {
+    //     fetch("https://jsonplaceholder.typicode.com/users")
+    //       .then(response => {
+    //         return response.json()
+    //       })
+    //       .then(data => {
+    //         setUsers(data)
+    //       })
+    //   }
+   try{
+    const res =  await fetch('http://3.142.121.92:5000/api/v1/login',{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({
+            email,
+            password
+        })
+    }) .then(async response => {
+        console.log(response,'responsedata')
+        const data =await response.json()
+        
+            console.log(data,'responsedata1')
+            if (data.redirected) {
+                const url1 = "/dashboard"
+                // history.push('/dashbord')
+            }
+        //    if(data){
+        //    history.push("/dashboard");
+        //    }
+        // else{
+        //     window.alert("invelid credentials")
+        // }
+      })
+    //   .then(data => {
+    //     setUsers(data)
+    //   })
+//     const data = res
+//     console.log(data,'datat')
+//     if(data){
+//         history.push("/dashboard");
+//         // history.push('')
+//     }
+//    else{
+       
+//     window.alert("invelid credentials")
+    
+//     }
+   }
+   catch(err){
+       console.log('error',err.message)
+   }
+    
+}
+    
 
 
-    handleSubmit(event, values) {
-        this.props.checkLogin(values.username, values.password, this.props.history);
-    }
+   
 
-    render() {
+    
 
         return (
             <React.Fragment>
@@ -43,15 +95,13 @@ class Pageslogin extends Component {
                         </div>
                         <div className="account-card-content">
 
-                           {this.props.user && <Alert color="success">
-                                    Your Login is successfull.</Alert>}
+                           
 
-                            {this.props.loginError && <Alert color="danger">
-                                {this.props.loginError}</Alert>}
+                            
 
-                            <AvForm className="form-horizontal m-t-30" onValidSubmit={this.handleSubmit} >
-                                <AvField name="username" label="Email" value={this.state.username} placeholder="Enter Email" type="text" required />
-                                <AvField name="password" label="Password" value={this.state.password} placeholder="Enter Password" type="password" required />
+                            <AvForm className="form-horizontal m-t-30" >
+                                <AvField name="email" label="Email" value={email} onChange={(e)=>setemail(e.target.value)} placeholder="Enter Email" type="text" required />
+                                <AvField name="password" label="Password" onChange={(e)=>setpassword(e.target.value)} value={password} placeholder="Enter Password" type="password" required />
                                 <div className="form-check-inline">
                                 <label className='form-check-label'>
                                     <input className='form-check-input' type="checkbox" />
@@ -64,7 +114,7 @@ class Pageslogin extends Component {
                                     </Col>
                                     <Col sm="6" className="text-right">
                                         
-                                        <Button color="primary" className="w-md waves-effect waves-light" type="submit">Log In</Button>
+                                        <Button color="primary" className="w-md waves-effect waves-light" type="submit" onClick={loginuser}>Log In</Button>
                                         
                                     </Col>
                                 </Row>
@@ -92,11 +142,8 @@ class Pageslogin extends Component {
             </React.Fragment>
         );
     }
-}
 
-const mapStatetoProps = state => {
-    const { user, loginError, loading } = state.Login;
-    return { user, loginError, loading };
-}
 
-export default withRouter(connect(mapStatetoProps, { checkLogin })(Pageslogin));
+
+
+export default Pageslogin;
