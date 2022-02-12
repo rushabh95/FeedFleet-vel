@@ -52,7 +52,13 @@ const Pagesregister = () => {
             }
         }
     
+    
 
+    
+
+   
+
+   
         return (
             <React.Fragment>
                 <div className="home-btn d-none d-sm-block">
