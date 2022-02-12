@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-var baseUrl = "http://3.142.121.92:5000/api/v1/"
 //Set the logged in user data in local session 
 const setLoggeedInUser = (user) => {
     localStorage.setItem('user', JSON.stringify(user));
@@ -20,12 +19,11 @@ const isUserAuthenticated = () => {
 }
 
 // Register Method
-const postRegister = (data) => {
-    console.log("postRegister ", data);
-    return axios.post('http://3.142.121.92:5000/api/v1/signup', data).then(response => {
-        //if (response.status >= 200 || response.status <= 299)
-        console.log('response',response)
-        return response.data;
+const postRegister = (url, data) => {
+    return axios.post("http://3.142.121.92:5000/api/v1/signup" , data).then(response => {
+        if (response.status >= 200 || response.status <= 299)
+            return response.data;
+            throw response.data;
     }).catch(err => {
         var message;
         if (err.response && err.response.status ) {
@@ -43,16 +41,14 @@ const postRegister = (data) => {
 
 // Login Method
 const postLogin = (url, data) => {
-    return axios.post(`${baseUrl}login`, data).then(response => {
+    return axios.post("http://3.142.121.92:5000/api/v1/login", data).then(response => {
         
         if (response.status === 400 || response.status === 500)
-    
             throw response.data;
-            return response.data;
+        return response.data;
     }).catch(err => {
         throw err[1];
     });
-    
 }
 
 // postForgetPwd 

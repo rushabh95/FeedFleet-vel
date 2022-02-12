@@ -18,14 +18,11 @@ class Pagesregister extends Component {
             password: ""        
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        
     }
 
-    handleSubmit(event, values) {
+     handleSubmit(event, values) {
         this.props.registerUser(values)
-    }
-
-    componentWillReceiveProps(nextProps, prevProps) {
-        console.log("nextProps", nextProps);
     }
 
 
@@ -54,7 +51,7 @@ class Pagesregister extends Component {
                                 {this.props.registrationError}</Alert>}
 
                             <AvForm className="form-horizontal m-t-30" onValidSubmit={this.handleSubmit} >
-                                <AvField name="Fullname" label="Fullname" value={this.state.fullname} placeholder="Enter Fullname" type="text" required />
+                                <AvField name="fullname" label="Fullname" value={this.state.fullname} placeholder="Enter Fullname" type="text" required />
                                 <AvField name="email" label="Email" value={this.state.email} placeholder="Enter Email" type="email" required />
                                 <AvField name="companyname" label="Company name" value={this.state.companyname} placeholder="Enter company name" type="text" required />
                                 <AvField name="password" label="Password" value={this.state.password} placeholder="Enter Password" type="password" required />
