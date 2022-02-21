@@ -2,7 +2,7 @@
   "name": "vertical",
   "version": "0.1.0",
   "private": true,
-  "proxy":"http://3.142.121.92:5000",
+  "proxy":"http://localhost:5000",
   "dependencies": {
     "@fullcalendar/bootstrap": "^4.3.0",
     "@fullcalendar/core": "^4.3.1",

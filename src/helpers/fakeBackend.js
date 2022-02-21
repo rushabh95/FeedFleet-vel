@@ -9,7 +9,7 @@ const fakeBackend = () => {
   // This sets the mock adapter on the default instance
   var mock = new MockAdapter(axios);
 
-  mock.onPost('/http://3.142.121.92:5000/api/v1/signup').reply(function (config) {
+  mock.onPost('http://localhost:5000/api/v1/signup').reply(function (config) {
 
     const user = JSON.parse(config['data']);
     users.push(user);
@@ -21,9 +21,9 @@ const fakeBackend = () => {
     });
   });
 
-  mock.onPost('/http://3.142.121.92:5000/api/v1/login').reply(function (config) {
+  mock.onPost('/http://localhost:5000/api/v1/login').reply(function (config) {
     const user = JSON.parse(config['data']);
-    const validUser = users.filter(usr => usr.email === user.username && usr.password === user.password);
+    const validUser = users.filter(usr => usr.email === user.email && usr.password === user.password);
     
     return new Promise(function (resolve, reject) {
       setTimeout(function () {
@@ -36,7 +36,7 @@ const fakeBackend = () => {
     });
   });
 
-  mock.onPost('/http://3.142.121.92:5000/api/v1/forget-pwd').reply(function (config) {
+  mock.onPost('/http://localhost:5000/api/v1/forget-pwd').reply(function (config) {
    // User needs to check that user is eXist or not and send mail for Reset New password
 
    return new Promise(function (resolve, reject) {

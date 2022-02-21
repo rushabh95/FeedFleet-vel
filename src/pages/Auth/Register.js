@@ -1,11 +1,12 @@
 import React, { Component, useEffect } from 'react';
 import { Alert, Button, Card, Row, Col } from 'reactstrap';
-import { Link,useHistory } from 'react-router-dom';
+import { Link,useHistory, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { registerUser, emptyError } from '../../store/actions';
 import logowhite from '../../images/logo-white.png';
 import { AvForm, AvField } from 'availity-reactstrap-validation';
 import { useState } from 'react';
+
 
 
 
@@ -30,7 +31,7 @@ const Pagesregister = () => {
         const postdata= async(e)=>{
             e.preventDefault()
             const {fullname,email,companyname,password,confirmpassword} =user
-            const res = await fetch("http://3.142.121.92:5000/api/v1/signup",{
+            const res = await fetch("http://localhost:5000/api/v1/signup",{
                 method:'POST',
                 headers:{
                     "Content-Type":"application/json"
@@ -48,7 +49,8 @@ const Pagesregister = () => {
                 console.log('invelid registration')
             }else{
                 console.log('registration successfull')
-                history.push('/login')
+                const his=history.push('/login')
+                console.log(his)
             }
         }
     
@@ -82,7 +84,7 @@ const Pagesregister = () => {
                             
 
                             <AvForm  className="form-horizontal m-t-30" onValidSubmit={handleinputs} >
-                                <AvField name="Fullname" label="Fullname" value={user.fullname} onChange={handleinputs} placeholder="Enter Fullname" type="text" required />
+                                <AvField name="fullname" label="Fullname" value={user.fullname} onChange={handleinputs} placeholder="Enter Fullname" type="text" required />
                                 <AvField name="email" label="Email" value={user.email} onChange={handleinputs} placeholder="Enter Email" type="email" required />
                                 <AvField name="companyname" label="Company name" value={user.companyname} onChange={handleinputs} placeholder="Enter company name" type="text" required />
                                 <AvField name="password" label="Password" value={user.password} onChange={handleinputs} placeholder="Enter Password" type="password" required />

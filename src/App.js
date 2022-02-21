@@ -39,9 +39,10 @@ class App extends Component {
 
     const PrivateRoute = ({ component: Component, ...rest }) => (
       <Route {...rest} render={(props) => (
-        isUserAuthenticated() === true
-          ? <Component {...props} />
-          : <Redirect to='/logout' />
+        // isUserAuthenticated() === true
+           <Component {...props} />
+          // : <Redirect to='/logout' 
+          // />
       )} />
     )
 

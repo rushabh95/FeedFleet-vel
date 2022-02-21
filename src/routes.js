@@ -187,7 +187,7 @@ const routes = [
 
     // Dashnoard
     { path: '/dashboard', component: Dashboard },
-    { path: '/', component: Pageslogin, ispublic: true},
+    { path: '/login', component: Pageslogin, ispublic: true},
 
 ];
 

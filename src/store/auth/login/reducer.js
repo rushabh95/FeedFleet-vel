@@ -1,9 +1,10 @@
 import { CHECK_LOGIN, LOGIN_USER_SUCCESSFUL, API_FAILED, CHECK_OTP, VALIDATE_OTP_SUCCESS, VALIDATE_OTP_ERROR } from './actionTypes';
 
 const initialState = {
-    loginError: null, message: null, loading: null
+    user:null, loginError: null, message: null, loading: null
 }
-
+const token = localStorage.getItem('token')
+console.log(token)
 const login = (state = initialState, action) => {
     switch (action.type) {
         case CHECK_LOGIN:
