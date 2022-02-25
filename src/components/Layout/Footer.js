@@ -6,7 +6,7 @@ class Footer extends Component {
     render() {
         return (
             <React.Fragment>
-                <footer className="footer">
+                <footer className="footer position-fixed">
                     <div className="container-fluid">
                         <Row>
                             <Col>

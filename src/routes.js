@@ -67,7 +67,9 @@ import Invoice from './pages/ExtraPages/pages-invoice';
 import Directory from './pages/ExtraPages/pages-directory';
 import Createnewcampaign from './pages/ExtraPages/pages-createnewcampaign';
 import createfleetvideo from './pages/ExtraPages/pages-createfleetvideo';
-import BlankPage from './pages/ExtraPages/pages-blank';
+import ApiKey from './pages/ExtraPages/ApiKey';
+import Transactions from './pages/ExtraPages/Transactions'
+import ChangePassword from './pages/ExtraPages/ChangePassword'
 import Error404 from './pages/ExtraPages/pages-404';
 import Error500 from './pages/ExtraPages/pages-500';
 import Pricing from './pages/ExtraPages/pages-pricing';
@@ -75,6 +77,12 @@ import Gallery from './pages/ExtraPages/pages-gallery';
 import Maintenance from './pages/ExtraPages/pages-maintenance';
 import ComingSoon from './pages/ExtraPages/pages-comingsoon';
 import Faq from './pages/ExtraPages/pages-faq';
+import Profile from './pages/ExtraPages/pages-profile'
+import SettingMenu from './pages/Subpages/Settingmenu'
+import Support from './pages/ExtraPages/pages-support';
+import AddNewTicket from './pages/ExtraPages/pages-AddNewTicket';
+import TicketAction from './pages/ExtraPages/pages-TicketAction';
+
 
 import Pageslogin2 from './pages/ExtraPages/pages-login-2';
 import Pagesregister2 from './pages/ExtraPages/pages-register-2';
@@ -97,38 +105,38 @@ const routes = [
     { path: '/reset-password', component: ResetPassword, ispublic: true },
  
     // Calendar
-    { path: '/calendar', component: Calendar },
+    // { path: '/calendar', component: Calendar },
 
     // Email & Email Templates
-    { path: '/email-inbox', component: EmailInbox },
-    { path: '/email-read', component: EmailRead },
-    { path: '/email-compose', component: EmailCompose },
-    { path: '/email-template-alert', component: Emailtemplatealert },
-    { path: '/email-template-basic', component: Emailtemplatebasic },
-    { path: '/email-template-billing', component: Emailtemplatebilling },
+    // { path: '/email-inbox', component: EmailInbox },
+    // { path: '/email-read', component: EmailRead },
+    // { path: '/email-compose', component: EmailCompose },
+    // { path: '/email-template-alert', component: Emailtemplatealert },
+    // { path: '/email-template-basic', component: Emailtemplatebasic },
+    // { path: '/email-template-billing', component: Emailtemplatebilling },
 
-    // Ui Elements
-    { path: '/ui-alerts', component: Uialerts },
-    { path: '/ui-buttons', component: Uibuttons },
-    { path: '/ui-cards', component: Uicards },
-    { path: '/ui-carousel', component: Uicarousel },
-    { path: '/ui-dropdowns', component: Uidropdowns },
-    { path: '/ui-grid', component: Uigrid },
-    { path: '/ui-images', component: Uiimages },
-    { path: '/ui-lightbox', component: Uilightbox },
-    { path: '/ui-modals', component: Uimodals },
-    { path: '/ui-rangeslider', component: Uirangeslider },
-    { path: '/ui-session-timeout', component: UisessionTimeout },
-    { path: '/ui-progressbars', component: Uiprogressbars },
-    { path: '/ui-sweet-alert', component: Uisweetalert },
-    { path: '/ui-tabs-accordions', component: Uitabsaccordions },
-    { path: '/ui-typography', component: Uitypography },
-    { path: '/ui-video', component: Uivideo },
-    { path: '/ui-general', component: Uigeneral },
-    { path: '/ui-colors', component: Uicolors },
-    { path: '/ui-rating', component: Uirating },
+    // // Ui Elements
+    // { path: '/ui-alerts', component: Uialerts },
+    // { path: '/ui-buttons', component: Uibuttons },
+    // { path: '/ui-cards', component: Uicards },
+    // { path: '/ui-carousel', component: Uicarousel },
+    // { path: '/ui-dropdowns', component: Uidropdowns },
+    // { path: '/ui-grid', component: Uigrid },
+    // { path: '/ui-images', component: Uiimages },
+    // { path: '/ui-lightbox', component: Uilightbox },
+    // { path: '/ui-modals', component: Uimodals },
+    // { path: '/ui-rangeslider', component: Uirangeslider },
+    // { path: '/ui-session-timeout', component: UisessionTimeout },
+    // { path: '/ui-progressbars', component: Uiprogressbars },
+    // { path: '/ui-sweet-alert', component: Uisweetalert },
+    // { path: '/ui-tabs-accordions', component: Uitabsaccordions },
+    // { path: '/ui-typography', component: Uitypography },
+    // { path: '/ui-video', component: Uivideo },
+    // { path: '/ui-general', component: Uigeneral },
+    // { path: '/ui-colors', component: Uicolors },
+    // { path: '/ui-rating', component: Uirating },
 
-    // Form Elements
+    // // Form Elements
     { path: '/form-elements', component: FormElements },
     { path: '/form-validation', component: FormValidation },
     { path: '/form-advanced', component: FormAdvanced },
@@ -139,55 +147,64 @@ const routes = [
     { path: '/form-wizard', component: FormWizard },
     { path: '/form-mask', component: FormMask },
 
-    // Charts
-    { path: '/charts-apex', component: ChartApex },
-    { path: '/charts-chartist', component: ChartChartist },
-    { path: '/charts-chartjs', component: ChartChartjs },
-    { path: '/charts-knob', component: ChartKnob },
-    { path: '/charts-echart', component: ChartEchart },
-    { path: '/charts-sparkline', component: ChartSparkline },
+    // // Charts
+    // { path: '/charts-apex', component: ChartApex },
+    // { path: '/charts-chartist', component: ChartChartist },
+    // { path: '/charts-chartjs', component: ChartChartjs },
+    // { path: '/charts-knob', component: ChartKnob },
+    // { path: '/charts-echart', component: ChartEchart },
+    // { path: '/charts-sparkline', component: ChartSparkline },
 
-    // Tables
+    // // Tables
     { path: '/tables-basic', component: BasicTable },
     { path: '/tables-editable', component: EditableTable },
     { path: '/tables-responsive', component: ResponsiveTable },
     { path: '/tables-datatable', component: DataTable },
 
     // Icons
-    { path: '/icons-material', component: MaterialDesign },
-    { path: '/icons-fontawesome', component: FontAwesome },
-    { path: '/icons-ion', component: IonIcons },
-    { path: '/icons-themify', component: ThemifyIcons },
-    { path: '/icons-dripicons', component: Dripicons },
-    { path: '/icons-typicons', component: TypIcons },
+    // { path: '/icons-material', component: MaterialDesign },
+    // { path: '/icons-fontawesome', component: FontAwesome },
+    // { path: '/icons-ion', component: IonIcons },
+    // { path: '/icons-themify', component: ThemifyIcons },
+    // { path: '/icons-dripicons', component: Dripicons },
+    // { path: '/icons-typicons', component: TypIcons },
 
     // Maps
-    { path: '/maps-google', component: GoogleMap },
-    { path: '/maps-vector', component: VectorMap },
+    // { path: '/maps-google', component: GoogleMap },
+    // { path: '/maps-vector', component: VectorMap },
 
     // Extra pages
-    { path: '/pages-invoice', component: Invoice },
+    // { path: '/pages-invoice', component: Invoice },
     { path: '/pages-directory', component: Directory },
     { path: '/pages-createnewcampaign', component: Createnewcampaign },
     { path: '/pages-createfleetvideo', component: createfleetvideo },
     { path: '/pages-timeline', component: Timeline },
-    { path: '/pages-blank', component: BlankPage },
-    { path: '/pages-404', component: Error404 },
-    { path: '/pages-500', component: Error500 },
-    { path: '/pages-pricing', component: Pricing },
-    { path: '/pages-gallery', component: Gallery },
-    { path: '/pages-maintenance', component: Maintenance },
-    { path: '/pages-comingsoon', component: ComingSoon },
-    { path: '/pages-faq', component: Faq },
+    // { path: '/pages-blank', component: BlankPage },
+    // { path: '/pages-404', component: Error404 },
+    // { path: '/pages-500', component: Error500 },
+    // { path: '/pages-pricing', component: Pricing },
+    // { path: '/pages-gallery', component: Gallery },
+    // { path: '/pages-maintenance', component: Maintenance },
+    // { path: '/pages-comingsoon', component: ComingSoon },
+    // { path: '/pages-faq', component: Faq },
+    { path: '/pages-profile', component: Profile },
+    {path: '/setting-apikey', component: ApiKey},
+    {path: '/setting-transactions', component: Transactions},
+    {path: '/setting-changepassword', component: ChangePassword},
+    
 
     { path: '/pages-login-2', component: Pageslogin2 },
     { path: '/pages-register-2', component: Pagesregister2 },
     { path: '/pages-recoverpw-2', component: Pagesrecoverpw2 },
     { path: '/pages-lock-screen-2', component: Pageslockscreen2 },
 
+
     // Dashnoard
     { path: '/dashboard', component: Dashboard },
     { path: '/login', component: Pageslogin, ispublic: true},
+    { path: '/pages-support', component: Support },
+    { path: '/pages-AddNewTicket', component: AddNewTicket },
+    { path: '/pages-TicketAction', component: TicketAction },
 
 ];
 

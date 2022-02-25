@@ -32,10 +32,10 @@ class ProfileMenu extends Component {
                         
                     </DropdownToggle>
                     <DropdownMenu className="profile-dropdown" right>
-                        <DropdownItem tag="a" href="#"><i className="mdi mdi-account-circle m-r-5"></i> Profile</DropdownItem>
-                        <DropdownItem tag="a" href="#"><i className="mdi mdi-wallet m-r-5"></i> My Wallet</DropdownItem>
-                        <DropdownItem tag="a" href="#"><Badge color="success" className="mt-1 float-right">11</Badge><i className="mdi mdi-settings m-r-5"></i> Settings</DropdownItem>
-                        <DropdownItem tag="a" href="#"><i className="mdi mdi-lock-open-outline m-r-5"></i> Lock screen</DropdownItem>
+                        <DropdownItem tag="a" href="/pages-profile"><i className="mdi mdi-account-circle m-r-5"></i> Profile Details</DropdownItem>
+                        
+                        
+                        <DropdownItem tag="a" href="/pages-support"><i className="mdi mdi-lock-open-outline m-r-5"></i> Support</DropdownItem>
                         <div className="dropdown-divider"></div>
                         <DropdownItem tag="a" className="text-danger" href="/logout"><i className="mdi mdi-power text-danger"></i> Logout</DropdownItem>
                     </DropdownMenu>

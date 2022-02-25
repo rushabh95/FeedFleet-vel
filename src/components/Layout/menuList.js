@@ -7,7 +7,13 @@ const menuList = [
                          { url: "/pages-createnewcampaign", label: "create new campaign" },
                          { url: "/pages-Createfleetvideo", label: "Create fleet video" },
       
-                    ]}
+                    ]},
+    {url: "", label: "Settings", icon: "fa fa-cog", class_name: "has-submenu", 
+    children: [
+     { url: "/setting-apikey", label: "Api Key " },
+      { url: "/setting-transactions", label: "Transaction" },
+      { url: "/setting-changepassword", label: "Change Password" }                
+      ]}
     
     
 //     //{url: "/pages-createnewcampaign", label: "Fleet Video", icon: "", class_name: "has-submenu" },

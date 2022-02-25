@@ -20,7 +20,7 @@ const loginuser = async(e) =>{
    
     const token = localStorage.getItem('jwtoken')
     console.log('jwtoken', token);
-    const res = await fetch('http://localhost:5000/api/v1/login',{
+    const res = await fetch('http://127.0.0.1:5000/api/v1/login',{
         method:'POST',
         headers:{'Content-Type':'application/json'},
         redirect: "follow",
@@ -32,16 +32,15 @@ const loginuser = async(e) =>{
       
     }
     ).then((res)=>{
-    //     console.log(res.token,'lfdsfjsd');
-    //     const data = res.json()
-    //    localStorage.setItem('jwtoken',data.token)
+        const data = res.json()
+       localStorage.setItem('jwtoken',data.token)
       
         dispatch(checkLogin(email,password,history))
 
-        //  if(data){
+         if(data){
          
-        //     history.push('/dashboard')
-        // }
+            history.push('/dashboard')
+        }
         //     history.push('/dashboard')
         //     window.location.href='/dashboard'
        

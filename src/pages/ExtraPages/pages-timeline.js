@@ -3,7 +3,7 @@ import { Container, Row, Col, Card, CardBody, Breadcrumb, BreadcrumbItem } from 
 import { activateAuthLayout } from '../../store/actions';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Settingmenu from '../Subpages/Settingmenu';
+
 
 //Images
 import small1 from '../../images/small/img-1.jpg';
@@ -39,7 +39,7 @@ class Timeline extends Component {
                             </Col>
                             <Col sm="6">
                                 <div className="float-right d-none d-md-block">
-                                    <Settingmenu />
+                                    
                                 </div>
                             </Col>
                         </Row>

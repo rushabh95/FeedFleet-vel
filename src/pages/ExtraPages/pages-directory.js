@@ -3,7 +3,7 @@ import { Container, Row, Col, Card, CardBody, Breadcrumb, BreadcrumbItem } from 
 import { activateAuthLayout } from '../../store/actions';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Settingmenu from '../Subpages/Settingmenu';
+
 
 //Images
 import user2 from '../../images/users/user-2.jpg';
@@ -45,7 +45,7 @@ class Directory extends Component {
                             </Col>
                             <Col sm="6">
                                 <div className="float-right d-none d-md-block">
-                                    <Settingmenu />
+                                   
                                 </div>
                             </Col>
                         </Row>

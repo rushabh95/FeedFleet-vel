@@ -22,10 +22,10 @@ const isUserAuthenticated = () => {
 const postRegister = (url,data) => {
     // const history = useHistory()
     console.log("postRegister ", data);
-    return axios.post('http://localhost:5000/api/v1/signup',data).then(response => {
-        if (response.status >= 200 || response.status <= 299){
+    return axios.post('http://127.0.0.1:5000/api/v1/signup',data).then(response => {
+        //if (response.status >= 200 || response.status <= 299)
         console.log('response',response)
-        return response.data;}
+        return response.data;
     }).catch(err => {
         var message;
         if (err.response && err.response.status ) {
@@ -43,13 +43,13 @@ const postRegister = (url,data) => {
 
 // Login Method
 const postLogin = (url, data) => {
-    return axios.post('http://localhost:5000/api/v1/login', data).then(response => {
+    return axios.post('http://127.0.0.1:5000/api/v1/login', data).then(response => {
         
         if (response.status === 400 || response.status === 500)
     
             throw response.data;
             console.log(response.data.token,'dataaaaaaaaaaaaaa')
-            if(response.data){
+            if(response.data.token){
          
                 window.location.href='/dashboard'
             }
@@ -62,7 +62,7 @@ const postLogin = (url, data) => {
 
 // postForgetPwd 
 const postForgetPwd = (url, data) => {
-    return axios.post("http://localhost:5000/api/v1/forgetpassword", data).then(response => {
+    return axios.post("http://127.0.0.1:5000/api/v1/forgetpassword", data).then(response => {
         if (response.status === 400 || response.status === 500)
             throw response.data;
         return response.data;
